@@ -1,0 +1,51 @@
+<div ng-controller='productsController'>
+
+	<h1>Admin Dashboard - Products</h1>
+		<ul class="nav nav-tabs">
+			<li role="presentation"><a href="#/admin/home">Home</a></li>
+			<li role="presentation" class="active"><a href="#/admin/products">Products</a></li>
+			<li role="presentation"><a href="#/admin/customers">Customers</a></li>
+			<li role="presentation"><a href="#/admin/orders">Orders</a></li>
+			<li role="presentation"><a href="#/admin/privileges">Privileges</a></li>
+		</ul>
+
+	
+	<div id="products">
+        <div id="left">
+        	<h3>Products</h3>
+            <input type="Text" placeholder='Search' ng-model='filter_name.name'><br>
+            <br>
+            <br>
+            
+            <h4>Add a new product</h4>
+
+            <form>
+                Name: <br>
+                <input type="text" ng-model='newProduct.name' placeholder='name...'><br><br>
+                Image (URL):<br>
+                <input type="text" ng-model='newProduct.image' placeholder='http://'><br><br>
+                Description:<br>
+                <textarea ng-model='newProduct.description' rows='5'></textarea><br><br>
+                Initial Quantity:<br>
+                <input type="text" ng-model='newProduct.quantity'>
+                <br>
+                <input type="submit" ng-click='createProduct()' value="Create">
+
+            </form>
+        </div>
+
+        <div id="right">
+            
+
+            <div id="product_snippet" ng-repeat='product in products | filter: filter_name'>
+                <img src="{{ product.image}}" ng-click='getProductByID(product)' height="100">
+               
+                <p>{{ product.name }}</p>
+                <p>{{ product.description }}</p>
+                <p>({{ product.quantity }} left) </p><br>
+            </div>
+        </div>
+    </div>
+
+
+</div>

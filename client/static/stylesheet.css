@@ -1,0 +1,124 @@
+body {
+        font-family: 'Poppins', serif;
+        margin-top: 10px;
+}
+h1{
+	margin-left: 30px;
+}
+#navigate{
+	display: inline;
+}
+a{
+	text-decoration: none;
+	color: black;
+}
+a:hover{
+	text-decoration: underline;
+}
+#homeImg{
+	width: 100%;
+	padding: 0px;
+}
+#homeImg img{
+	width: 100%;
+}
+.shopNow{
+	height: 200px;
+	padding: 0px;
+}
+.shopNow h1{
+	margin: 0px;
+	font-size: 60px;
+	text-align: center;
+	font-weight: bolder;
+}
+.category button{
+	-moz-transition: all .2s ease-in;
+    -o-transition: all .2s ease-in;
+    -webkit-transition: all .2s ease-in;
+    transition: all .2s ease-in;
+	border: 2px solid black;
+	margin: 0px 10px;
+	padding-top: 5px;
+	width: 200px;
+	font-size: 17px;
+	background-color: white;
+}
+.category #but1 button:hover{
+	-moz-transition: all .2s ease-in;
+    -o-transition: all .2s ease-in;
+    -webkit-transition: all .2s ease-in;
+    transition: all .2s ease-in;
+	background-color: #DE2029;
+	color: white;
+	display: inline;
+}
+.category #but2 button:hover{
+	-moz-transition: all .2s ease-in;
+    -o-transition: all .2s ease-in;
+    -webkit-transition: all .2s ease-in;
+    transition: all .2s ease-in;
+	background-color: #0454A6;
+	color: white;
+	/*display: inline;*/
+}
+.category #but3 button:hover{
+	-moz-transition: all .2s ease-in;
+    -o-transition: all .2s ease-in;
+    -webkit-transition: all .2s ease-in;
+    transition: all .2s ease-in;
+	background-color: #40AE46;
+	color: white;
+	display: inline;
+}
+.category{
+	padding: 0px;
+	margin: 0px;
+	text-align: center;
+}
+#but1{
+	display: inline;
+}
+#but2{
+	display: inline;
+}
+#but3{
+	display: inline;
+}
+#navigationLeft{
+	padding-left: 30px;
+	display: inline;
+}
+#navigationLeft a{
+	margin: 0px 10px;
+}
+#navigationRight{
+	display: inline;
+	position: absolute;
+	right: 0px;
+	padding-right: 30px;
+}
+#navigationRight a{
+	margin: 0px 10px;
+}
+#left{
+	margin-left: 10px;
+	min-width: 200px;
+    width: 20%;
+    display: inline-block;
+    vertical-align: top;
+}
+#right {
+    width: 75%;
+    display: inline-block;
+    vertical-align: top;
+    margin: 20px 10px;
+
+}
+.center {
+    text-align: center;
+    padding: 10px;
+}
+#right img{
+    text-align: center;
+}
