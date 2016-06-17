@@ -13,8 +13,10 @@ myAppModule.factory('productFactory', function($http){
   };
 
   factory.getProductByID = function(id, callback){
+    console.log(id)
     $http.get('/product/' + id).success(function(res){
       products = res;
+      console.log(products)
       callback(products);
     })
   };
