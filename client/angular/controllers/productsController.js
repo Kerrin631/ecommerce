@@ -6,13 +6,9 @@
       myAppModule.controller('productsController', function ($scope, $location, productFactory, $routeParams){
 	//  initialize an empty array so $scope.orders maintains a consistent data type
           $scope.products = [];
+          $scope.indProducts = [];
           $scope.route = $routeParams
           // run the getcustomers method and set $scope data in the callback
-
-        	// orderFactory.getOrders(function (data){
-         //    	console.log(data);
-         //    	$scope.orders = data;
-        	// })
 
 
         productFactory.getProducts(function (data){
@@ -21,7 +17,21 @@
                 // console.log(data)
         })
 
-          
+            $scope.getProductByID = function(info) {
+                var id = info._id
+                console.log(id)
+                // console.log($scope.product)
+                // $location.path('/admin/products/' + info._id)
+        // if ($routeParams.id.length > 10) {
+            // console.log(info)
+            // console.log(info._id)
+                productFactory.getProductByID(id, function(data) {
+                    console.log(id)
+            })
+                $location.path('/admin/products/' + info._id)
+        } 
+
+
             $scope.createProduct = function (data){
               // add to the array
               // $scope.orders.push($scope.newOrder);
@@ -40,13 +50,14 @@
                 var id = info._id
                 console.log(id)
                 // console.log($scope.product)
-                $location.path('/admin/products/' + info._id)
+                // $location.path('/admin/products/' + info._id)
         // if ($routeParams.id.length > 10) {
             // console.log(info)
             // console.log(info._id)
                 productFactory.getProductByID(id, function(data) {
                     console.log(id)
             })
+                $location.path('/admin/products/' + info._id)
         } 
 
 
