@@ -1,13 +1,11 @@
-<<<<<<< HEAD
-myAppModule.controller('productsController', function ($scope, $location, productFactory, $routeParams, $timeout){
-=======
+
+
 //  build the controllers
     // Create a controller (attached to this module), and inject the productFactory in it.
     // Create a module
       // var myAppModule = angular.module('FBApp', ['ngRoute']);
       // Create a controller (attached to this module), and inject the productFactory in it.
-myAppModule.controller('productsController', function ($scope, $location, productFactory, $routeParams){
->>>>>>> ee0383937d901e423d59096439ae09ae883d5a90
+myAppModule.controller('productsController', function ($scope, $location, productFactory, $routeParams, $timeout){
   $scope.products = [];
   $scope.productData = [];
   $scope.route = $routeParams
@@ -33,12 +31,11 @@ myAppModule.controller('productsController', function ($scope, $location, produc
   };
 
   $scope.getProductByID = function(info) {
-     // $location.path('/admin/products/' + info._id)
     var id = info._id
-    productFactory.getProductByID(id, function(data) {
-      $scope.productData = data;
+    // productFactory.getProductByID(id, function(data) {
+    //   $scope.productData = data;
       $location.path('/admin/products/' + info._id);
-    })
+    // })
 
   }
 

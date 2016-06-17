@@ -1,4 +1,4 @@
-myAppModule.controller('adminProductsController', function ($scope, $location, productFactory, $routeParams, $timeout){
+myAppModule.controller('individualProductsController', function ($scope, $location, productFactory, $routeParams, $timeout){
   $scope.productData = {}
   $scope.id = $routeParams.id
 

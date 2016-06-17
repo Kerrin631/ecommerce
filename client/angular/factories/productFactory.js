@@ -16,14 +16,8 @@ myAppModule.factory('productFactory', function($http){
   factory.getProductByID = function(id, callback){
     console.log(id)
     $http.get('/product/' + id).success(function(res){
-<<<<<<< HEAD
       product = res;
       callback(product);
-=======
-      products = res;
-      console.log(products)
-      callback(products);
->>>>>>> ee0383937d901e423d59096439ae09ae883d5a90
     })
   };
 
