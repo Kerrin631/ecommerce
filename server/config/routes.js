@@ -19,11 +19,8 @@ var product = require('./../controllers/products.js');
     product.create(req, res);
   });
   app.get('/product/:id', function(req, res) {
-    console.log('POST DATA', req.body);
-    // product.create(req, res);
+    console.log('POST DATA', req.params);
+    product.getProductByID(req, res);
   });
 
 };
-
-
-

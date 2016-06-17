@@ -10,14 +10,17 @@
 		</ul>
 
 		<div id="right">
-            
 
-            <div id="product_snippet" ng-repeat='product in products | filter: filter_name'>
-                <a href="#/admin/products/{{product._id}}"><img src="{{ product.image }}" height="100"></a>
-               
-                <p>{{ product.name}}</p>
-                <p>{{ product.description}}</p>
-                <p>({{ product.quantity}} left) </p><br>
+
+            <div id="product_snippet">
+							<h1>HERE In PRODUCT</h1>
+							<pre>{{ productData | json}}</pre>
+							<pre>{{ products | json}}</pre>
+              <img src="{{ productData.image }}" height="100">
+
+              <p>{{ productData.name}}</p>
+              <p>{{ productData.description}}</p>
+              <p>({{ productData.quantity}} left) </p><br>
             </div>
         </div>
 

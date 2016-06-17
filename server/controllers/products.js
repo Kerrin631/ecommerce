@@ -5,17 +5,26 @@ var product = mongoose.model('product');
 module.exports = (function() {
 	return {
  		index: function(req, res) {
-    		product.find({}, function(err, results) {
-    			if(err) {
-    			console.log(err);
-    		} else {
-        		res.json(results);
-    		}
-		})
-	},
+  		product.find({}, function(err, results) {
+  			if(err) {
+  				console.log(err);
+  			} else {
+      		res.json(results);
+  			}
+			})
+		},
 
+ 		getProductByID: function(req, res) {
+  		product.findOne({_id: req.params.id}, function(err, product) {
+  			if(err) {
+  				console.log(err);
+  			} else {
+      		res.json(product);
+  			}
+			})
+		},
 
-	create: function(req, res) {
+		create: function(req, res) {
 			var newProduct = new product({name: req.body.name, image: req.body.image, description: req.body.description, quantity: req.body.quantity, date: req.body.created_at})
 			newProduct.save(function(err) {
 				if(err) {
@@ -34,8 +43,8 @@ module.exports = (function() {
 	// 		res.end();
 	// 	})
 	// }
-	
-	
-}
+
+
+	}
 })();
 // note that this is just a code snippet of the show method from the object returned in the controller (this includes the exports module.exports
