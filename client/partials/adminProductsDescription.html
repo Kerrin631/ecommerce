@@ -1,6 +1,6 @@
-<div ng-controller='productsController'>
+<div ng-controller='adminProductsController'>
 
-<h1>Admin Dashboard - Products</h1>
+	<h1>Admin Dashboard - Products</h1>
 		<ul class="nav nav-tabs">
 			<li role="presentation"><a href="#/admin/home">Home</a></li>
 			<li role="presentation" class="active"><a href="#/admin/products">Products</a></li>
@@ -10,18 +10,12 @@
 		</ul>
 
 		<div id="right">
-
-
-            <div id="product_snippet">
-							<h1>HERE In PRODUCT</h1>
-							<pre>{{ productData | json}}</pre>
-							<pre>{{ products | json}}</pre>
-              <img src="{{ productData.image }}" height="100">
-
-              <p>{{ productData.name}}</p>
-              <p>{{ productData.description}}</p>
-              <p>({{ productData.quantity}} left) </p><br>
-            </div>
-        </div>
+      <div id="product_snippet">
+        <img src="{{ productData.image }}" height="100">
+        <p>Product Name: {{ productData.name}}</p>
+        <p>Product Description: {{ productData.description}}</p>
+        <p>Quantity: ({{ productData.quantity}} left) </p><br>
+      </div>
+    </div>
 
 </div>

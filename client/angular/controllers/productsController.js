@@ -1,4 +1,4 @@
-myAppModule.controller('productsController', function ($scope, $location, productFactory, $routeParams){
+myAppModule.controller('productsController', function ($scope, $location, productFactory, $routeParams, $timeout){
   $scope.products = [];
   $scope.productData = {}
   $scope.route = $routeParams
@@ -27,9 +27,9 @@ myAppModule.controller('productsController', function ($scope, $location, produc
     var id = info._id
     productFactory.getProductByID(id, function(data) {
       $scope.productData = data;
-      console.log($scope.productData);
+      $location.path('/admin/products/' + info._id);
     })
-    $location.path('/admin/products/' + info._id)
+
   }
 
 });

@@ -1,6 +1,7 @@
 myAppModule.factory('productFactory', function($http){
   // The factory is nothing more than a function that returns an object
   var products = [];
+  var product = {};
   var factory = {};
   // Add a getproducts key to the factory object with a value of a function.
   factory.getProducts = function (callback){
@@ -14,8 +15,8 @@ myAppModule.factory('productFactory', function($http){
 
   factory.getProductByID = function(id, callback){
     $http.get('/product/' + id).success(function(res){
-      products = res;
-      callback(products);
+      product = res;
+      callback(product);
     })
   };
 
