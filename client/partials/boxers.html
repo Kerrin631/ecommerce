@@ -1,5 +1,26 @@
 <div ng-controller='productsController'>
 
-<h1>Boxers</h1>
+	<h1>Boxers</h1>
+
+
+	<div id="left">
+		<h3>Search</h3>
+		<input type="Text" placeholder='Search...' ng-model='filter_name.name'><br>
+		<br>
+		<br>
+    </div>
+
+    <div id="right">
+    	<div class="productRight" ng-repeat='product in products | filter: filter_name'>
+		<a href="#/admin/products/{{product._id}}" >
+		<img src="{{ product.image}}"></a>
+
+		<h3>{{ product.name }}</h3>
+		<!-- <p>Type: {{ product.type }}</p> -->
+		<!-- <p>In Stock: {{ product.inStock }}</p> -->
+		<p>{{ product.price }}</p>
+    </div>
+    </div>
+    
 
 </div>

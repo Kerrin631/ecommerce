@@ -33,6 +33,9 @@ var myAppModule = angular.module('FBApp', ['ngRoute']);
         .when('/admin/products/:id', {
             templateUrl: 'partials/adminProductsDescription.html'
         })
+        .when('/admin/products/:id/edit', {
+            templateUrl: 'partials/adminProductsEdit.html'
+        })
         .otherwise({
             redirectTo: '/'
         });

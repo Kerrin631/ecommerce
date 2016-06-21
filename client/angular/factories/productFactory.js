@@ -14,7 +14,7 @@ myAppModule.factory('productFactory', function($http){
   };
 
   factory.getProductByID = function(id, callback){
-    console.log(id)
+    // console.log(id)
     $http.get('/product/' + id).success(function(res){
       product = res;
       callback(product);
@@ -28,11 +28,21 @@ myAppModule.factory('productFactory', function($http){
   	})
   };
 
-  factory.destroy = function(info, callback){
-  	console.log(info)
+  factory.updateProductByID = function(info, callback){
+    // console.log(info)
+    var id = info._id;
+    // console.log(id)
+    $http.post('/product/' + id, info).success(function(res){
+      // product = res;
+      callback(product);
+    })
+  };
+
+  factory.delete = function(info, callback){
+  	// console.log(info)
   	var id = info._id;
   	$http.delete('/product/delete/'+ id).success(function(){
-  		console.log('hello'+ info);
+  		// console.log('hello'+ info);
   		callback(products)
   	})
   }

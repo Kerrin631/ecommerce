@@ -21,7 +21,7 @@ myAppModule.controller('productsController', function ($scope, $location, produc
   })
 
   $scope.createProduct = function (data){
-    console.log($scope.newProduct)
+    // console.log($scope.newProduct)
     productFactory.addProduct($scope.newProduct, function(){
       productFactory.getProducts(function (data){
       $scope.products = data;
@@ -30,13 +30,13 @@ myAppModule.controller('productsController', function ($scope, $location, produc
     $scope.newProduct = {};
   };
 
-  $scope.getProductByID = function(info) {
-    var id = info._id
-    // productFactory.getProductByID(id, function(data) {
-    //   $scope.productData = data;
-      $location.path('/admin/products/' + info._id);
-    // })
+  // $scope.getProductByID = function(info) {
+  //   var id = info._id
+  //   // productFactory.getProductByID(id, function(data) {
+  //   //   $scope.productData = data;
+  //     $location.path('/admin/products/' + info._id);
+  //   // })
 
-  }
+  // }
 
 });

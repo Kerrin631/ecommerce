@@ -1,6 +1,7 @@
 <div ng-controller='individualProductsController'>
 
 	<h1>Admin Dashboard - Products</h1>
+	<!-- <h3>{{ productData.name }}</h3> -->
 		<ul class="nav nav-tabs">
 			<li role="presentation"><a href="#/admin/home">Home</a></li>
 			<li role="presentation" class="active"><a href="#/admin/products">Products</a></li>
@@ -9,13 +10,35 @@
 			<li role="presentation"><a href="#/admin/privileges">Privileges</a></li>
 		</ul>
 
-		<div id="right">
-      <div id="product_snippet">
-        <img src="{{ productData.image }}" height="100">
-        <p>Product Name: {{ productData.name}}</p>
-        <p>Product Description: {{ productData.description}}</p>
-        <p>Quantity: ({{ productData.quantity}} left) </p><br>
+      <div class="product">
+        
+        <h2>{{ productData.name}}</h2>
+        <img src="{{ productData.image }}" height="350">
+
+        <div class="product_info">
+        	<h4>Product Name:</h4>
+	        <p>{{ productData.name}}</p>
+	        <h4>Product Description:</h4>
+	        <p>{{ productData.description}}</p>
+	        <h4>Quantity:</h4> 
+	        <p>({{ productData.quantity}} left) </p>
+	        <h4>In Stock:</h4>
+	        <p>{{ productData.inStock }}</p>
+	        <h4>Type:</h4>
+	        <p>{{ productData.type }}</p>
+	        <h4>Price:</h4>
+	        <p>{{ productData.price }}</p>
+
+	        <div class="update">
+	        	<a href="#/admin/products/{{productData._id}}/edit">Edit Info</a>
+		       	<a ng-click='delete(productData)'>Delete</a>
+	        </div>
+        </div>
+        
+        
+        
+
+
       </div>
-    </div>
 
 </div>

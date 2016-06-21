@@ -1,0 +1,71 @@
+<div ng-controller='individualProductsController'>
+
+	<h1>Admin Dashboard - Products</h1>
+		<ul class="nav nav-tabs">
+			<li role="presentation"><a href="#/admin/home">Home</a></li>
+			<li role="presentation" class="active"><a href="#/admin/products">Products</a></li>
+			<li role="presentation"><a href="#/admin/customers">Customers</a></li>
+			<li role="presentation"><a href="#/admin/orders">Orders</a></li>
+			<li role="presentation"><a href="#/admin/privileges">Privileges</a></li>
+		</ul>
+
+        <h1>Edit</h1>
+	
+	<div id="productsForm">
+        <div id="left">
+        	
+            
+            <h4>Edit Product</h4>
+
+            <form>
+                Name: <br>
+                <input type="text" ng-model='updateProduct.name'><br><br>
+                Image (URL):<br>
+                <input type="text" ng-model='updateProduct.image' value='{{productData.image}}'><br><br>
+                Description:<br>
+                <textarea ng-model='updateProduct.description' rows='5'>{{productData.description}}</textarea><br><br>
+                Initial Quantity:<br>
+                <input type="text" ng-model='updateProduct.quantity' value="{{ productData.quantity}}">
+                <br>
+                In Stock:<br>
+                <select ng-model='updateProduct.inStock'>
+                    <option>Yes</option>
+                    <option>No</option>
+                </select><br><br>
+                Price ($):<br>
+                <input type="text" ng-model='updateProduct.price' placeholder='00.00'><br><br>
+                Type:<br>
+                <select ng-model='updateProduct.type'>
+                    <option>Boxers</option>
+                    <option>Pajamas</option>
+                </select><br>
+
+
+                <input type="submit" ng-click='updateProductByID(productData)' value="Update">
+
+            </form>
+        </div>
+
+        <div class="product">
+        
+        <h2>{{ productData.name}}</h2>
+        <img src="{{ productData.image }}" height="350">
+
+        <div class="product_info">
+            <h4>Product Name:</h4>
+            <p>{{ productData.name}}</p>
+            <h4>Product Description:</h4>
+            <p>{{ productData.description}}</p>
+            <h4>Quantity:</h4> 
+            <p>({{ productData.quantity}} left) </p>
+            <h4>In Stock:</h4>
+            <p>{{ productData.inStock }}</p>
+            <h4>Type:</h4>
+            <p>{{ productData.type }}</p>
+            <h4>Price:</h4>
+            <p>{{ productData.price }}</p>
+        </div>
+    </div>
+
+
+</div>

@@ -25,7 +25,7 @@ module.exports = (function() {
 		},
 
 		create: function(req, res) {
-			var newProduct = new product({name: req.body.name, image: req.body.image, description: req.body.description, quantity: req.body.quantity, date: req.body.created_at})
+			var newProduct = new product({name: req.body.name, image: req.body.image, description: req.body.description, quantity: req.body.quantity, inStock: req.body.inStock, price: req.body.price, type: req.body.type, date: req.body.created_at})
 			newProduct.save(function(err) {
 				if(err) {
 					console.log('New product has not been added');
@@ -36,13 +36,33 @@ module.exports = (function() {
 			})
 		},
 
-	// destroy: function(req, res) {
-	// 	product.remove({_id: req.params.id}, function (err, product){
-	// 		console.log('You have taken this product off the shelves')
-	// 		// res.redirect('/');
-	// 		res.end();
-	// 	})
-	// }
+		update: function(req, res) {
+			// console.log(req.body)
+			// console.log(req.body.name.length)
+			// if (req.body.name.length > 0) {
+			// 	console.log('this is true');
+			// } else {
+			// 	console.log('false')
+			// }
+			product.update({_id: req.params.id}, {name: req.body.name, image: req.body.image, description: req.body.description, quantity: req.body.quantity, inStock: req.body.inStock, price: req.body.price, type: req.body.type, date: req.body.created_at}, function (err, user){
+		    	if(err) {
+		    		console.log('Error updating product')
+		    	} else {
+		    		console.log('Product successfully updated');
+		    		res.end();
+		    	}
+		    })
+		},
+		
+
+
+		destroy: function(req, res) {
+			product.remove({_id: req.params.id}, function (err, product){
+				console.log('You have taken this product off the shelves')
+				// res.redirect('/');
+				res.end();
+			})
+		}
 
 
 	}

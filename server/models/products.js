@@ -7,6 +7,9 @@ var ProductSchema = new mongoose.Schema({
   image: String,
   description: String,
   quantity: Number,
+  inStock: Boolean,
+  price: Number,
+  type: String,
   date: Date
 });
 // use the schema to create the model

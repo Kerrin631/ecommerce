@@ -10,7 +10,7 @@
 		</ul>
 
 	
-	<div id="products">
+	<div id="productsForm">
         <div id="left">
         	<h3>Products</h3>
             <input type="Text" placeholder='Search' ng-model='filter_name.name'><br>
@@ -28,7 +28,20 @@
                 <textarea ng-model='newProduct.description' rows='5'></textarea><br><br>
                 Initial Quantity:<br>
                 <input type="text" ng-model='newProduct.quantity'>
-                <br>
+                <br><br>
+                In Stock:<br>
+                <select ng-model='newProduct.inStock'>
+                	<option>Yes</option>
+                	<option>No</option>
+                </select><br><br>
+                Price ($):<br>
+                <input type="text" ng-model='newProduct.price' placeholder='00.00'><br><br>
+                Type:<br>
+                <select ng-model='newProduct.type'>
+                	<option>Boxers</option>
+                	<option>Pajamas</option>
+                </select><br>
+
                 <input type="submit" ng-click='createProduct()' value="Create">
 
             </form>
@@ -38,11 +51,15 @@
             
 
             <div id="product_snippet" ng-repeat='product in products | filter: filter_name'>
-                <img src="{{ product.image}}" ng-click='getProductByID(product)' height="100"></a>
+                <a href="#/admin/products/{{product._id}}" >
+                <img src="{{ product.image}}" height="100"></a>
                
                 <p>{{ product.name }}</p>
                 <p>{{ product.description }}</p>
-                <p>({{ product.quantity }} left) </p><br>
+                <p>Type: {{ product.type }}</p>
+                <p>In Stock: {{ product.inStock }}</p>
+                <p>{{ product.price }}</p>
+                
             </div>
         </div>
     </div>
